@@ -147,6 +147,8 @@ class @BBoxAnnotator
         "cursor": "crosshair"
       annotator.image_frame.css
         "background-image": "url('" + image_element.src + "')",
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
         "width": options.width + "px",
         "height": options.height + "px",
         "position": "relative"
