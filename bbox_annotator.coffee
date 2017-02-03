@@ -70,7 +70,7 @@ class BBoxSelector
     @offset = @pointer
     this.refresh()
     @selector.show()
-    $('body').css('cursor', 'crosshair')
+    $('body').css('cursor', 'url(https://s28.postimg.org/ktjmvslcd/cursor.png) 64 64, crosshair')
     document.onselectstart = () ->
       false
 
@@ -144,7 +144,7 @@ class @BBoxAnnotator
       annotator.annotator_element.css
         "width": (options.width + annotator.border_width * 2) + 'px',
         "height": (options.height + annotator.border_width * 2) + 'px',
-        "cursor": "crosshair"
+        "cursor": "url(https://s28.postimg.org/ktjmvslcd/cursor.png) 64 64, crosshair"
       annotator.image_frame.css
         "background-image": "url('" + image_element.src + "')",
         "background-repeat": "no-repeat",
