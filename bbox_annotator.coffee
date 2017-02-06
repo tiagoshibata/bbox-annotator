@@ -183,9 +183,13 @@ class @BBoxAnnotator
       switch status
         when 'hold'
           selector.update_rectangle(e.pageX, e.pageY)
-          selector.input_label(options)
-          status = 'input'
-          selector.get_input_element().blur() if options.input_method == 'fixed'
+          rectangle = selector.rectangle()
+          if rectangle.width < 5 || rectangle.height < 5
+            alert('Selection is too small to be valid')
+          else
+            selector.input_label(options)
+            status = 'input'
+            selector.get_input_element().blur() if options.input_method == 'fixed'
       true
     selector.get_input_element().blur (e) ->
       switch status
